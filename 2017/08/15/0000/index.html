@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Centos6.5下guacamole 0.9.8配置数据库，实现管理多台电脑"/>
+
+
+
+
+  <meta name="keywords" content="guacamole, CC" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="CC">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.5.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/08/15/0000/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.5.0" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+    <title> Centos6.5下guacamole 0.9.8配置数据库，实现管理多台电脑 - CC </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">CC</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            主页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">CC</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              主页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Centos6.5下guacamole 0.9.8配置数据库，实现管理多台电脑
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-08-15
+        </span>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前提"><span class="toc-text">前提</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一-下载数据库连接拓展"><span class="toc-text">一.下载数据库连接拓展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-创建Guacamole的数据库（这里用的是Mysql"><span class="toc-text">二.创建Guacamole的数据库（这里用的是Mysql)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-在guacamole-properties中配置数据库的信息，添加下面的内容"><span class="toc-text">三.在guacamole.properties中配置数据库的信息，添加下面的内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-成功后guacamole的账号和密码默认都是guacadmin"><span class="toc-text">四.成功后guacamole的账号和密码默认都是guacadmin</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考文档："><span class="toc-text">参考文档：</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><ol>
+<li>已完成guacamole 0.9.8的基本安装</li>
+<li>已安装好mysql</li>
+</ol>
+<h3 id="一-下载数据库连接拓展"><a href="#一-下载数据库连接拓展" class="headerlink" title="一.下载数据库连接拓展"></a>一.下载数据库连接拓展</h3><p>1.在GUACAMOLE_HOME下创建文件夹sqlauth，下载guacamole-auth-jdbc-mysql-0.9.8.tar.gz和mysql-connector-java-5.1.38.tar.gz</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># mkdir sqlauth</div><div class="line"># cd sqlauth</div><div class="line"># wget http://dev.mysql.com/get/Downloads/Connector/j/mysql- connector-java-5.1.38.tar.gz </div><div class="line"># wget https://sourceforge.net/projects/guacamole/files/current/extensions/guacamole-auth-jdbc-0.9.8.tar.gz/</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>2.解压这两个文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># tar -zxf guacamole-auth-jdbc-0.9.8.tar.gz</div><div class="line"># tar -zxf mysql-connector-java-5.1.38.tar.gz</div></pre></td></tr></table></figure>
+<p>3.将guacamole-auth-jdbc-mysql-0.9.8.jar复制到extensions文件夹下，mysql-connector-java-5.1.38-bin.jar复制到lib下（如果没有这两个文件夹，请先去GUACAMOLE_HOME下创建这两个文件夹）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># cp /etc/guacamole/sqlauth/guacamole-auth-jdbc-0.9.8/mysql/guacamole-auth-jdbc-mysql-0.9.8.jar  /etc/guacamole/extensions/</div><div class="line"># cp /etc/guacamole/sqlauth/mysql-connector-java-5.1.38/mysql-connector-java-5.1.38-bin.jar /etc/guacamole/lib/</div></pre></td></tr></table></figure>
+<h3 id="二-创建Guacamole的数据库（这里用的是Mysql"><a href="#二-创建Guacamole的数据库（这里用的是Mysql" class="headerlink" title="二.创建Guacamole的数据库（这里用的是Mysql)"></a>二.创建Guacamole的数据库（这里用的是Mysql)</h3><p>1.创建一个数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># mysql -u root -p</div><div class="line">Enter password: password</div><div class="line">mysql&gt; CREATE DATABASE guacamole_db;</div><div class="line">Query OK, 1 row affected (0.00 sec)</div><div class="line"></div><div class="line">mysql&gt; CREATE USER &apos;guacamole_user&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;some_password&apos;;</div><div class="line">Query OK, 0 rows affected (0.00 sec)</div><div class="line"></div><div class="line">mysql&gt; GRANT SELECT,INSERT,UPDATE,DELETE ON guacamole_db.* TO &apos;guacamole_user&apos;@&apos;localhost&apos;;</div><div class="line">Query OK, 0 rows affected (0.00 sec)</div><div class="line"></div><div class="line">mysql&gt; FLUSH PRIVILEGES;</div><div class="line">Query OK, 0 rows affected (0.02 sec)</div><div class="line"></div><div class="line">mysql&gt; quit</div><div class="line">Bye</div></pre></td></tr></table></figure>
+<p>2.执行与guacamole想关的sql语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># cd guacamole/sqlauth/guacamole-auth-jdbc-0.9.8/mysql/schema/</div><div class="line"># cat ./*.sql | mysql -u root -p guacamole_db</div><div class="line">Enter password: password</div></pre></td></tr></table></figure>
+<h3 id="三-在guacamole-properties中配置数据库的信息，添加下面的内容"><a href="#三-在guacamole-properties中配置数据库的信息，添加下面的内容" class="headerlink" title="三.在guacamole.properties中配置数据库的信息，添加下面的内容"></a>三.在guacamole.properties中配置数据库的信息，添加下面的内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># MySQL properties</div><div class="line">mysql-hostname: localhost</div><div class="line">mysql-port: 3306</div><div class="line">mysql-database: guacamole_db</div><div class="line">mysql-username: guacamole_user</div><div class="line">mysql-password: some_password</div></pre></td></tr></table></figure>
+<h3 id="四-成功后guacamole的账号和密码默认都是guacadmin"><a href="#四-成功后guacamole的账号和密码默认都是guacadmin" class="headerlink" title="四.成功后guacamole的账号和密码默认都是guacadmin"></a>四.成功后guacamole的账号和密码默认都是guacadmin</h3><p>成功后截图，可在SETTINGS里添加新的电脑<br><img src="http://img.blog.csdn.net/20170807170055051?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2NjXzEyMzQ1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h5 id="参考文档："><a href="#参考文档：" class="headerlink" title="参考文档："></a>参考文档：</h5><p><a href="https://deviantengineer.com/2015/02/guacamole-centos7/" target="_blank" rel="external">https://deviantengineer.com/2015/02/guacamole-centos7/</a><br>  <a href="http://guacamole.incubator.apache.org/doc/gug/jdbc-auth.html" target="_blank" rel="external">http://guacamole.incubator.apache.org/doc/gug/jdbc-auth.html</a></p>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/wechat.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/guacamole/">guacamole</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2017/08/15/hello-world/">
+        <span class="next-text nav-default">Hello World</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/cc-123/" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">CC</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.5.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.5.0"></script>
+
+  </body>
+</html>
