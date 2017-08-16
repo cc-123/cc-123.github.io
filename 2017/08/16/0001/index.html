@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="Hello World"/>
+  <meta name="description" content="hexo + github 搭建个人博客"/>
 
 
 
@@ -40,7 +40,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/2017/08/15/hello-world/"/>
+<link rel="canonical" href="http://yoursite.com/2017/08/16/0001/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.5.0" />
@@ -73,7 +73,7 @@
 
 
 
-    <title> Hello World - CC </title>
+    <title> hexo + github 搭建个人博客 - CC </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -189,14 +189,20 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          Hello World
+          hexo + github 搭建个人博客
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2017-08-15
+          2017-08-16
         </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/hexo/">hexo</a>
+            
+          </div>
         
       </div>
     </header>
@@ -206,23 +212,80 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hello-World"><span class="toc-text">Hello World</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-安装Git-Bash"><span class="toc-text">一.安装Git Bash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-安装NodeJs"><span class="toc-text">二.安装NodeJs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-安装Hexo"><span class="toc-text">三.安装Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-创建gitHub仓库"><span class="toc-text">四.创建gitHub仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五-Hexo中github的配置"><span class="toc-text">五.Hexo中github的配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六-上传到github"><span class="toc-text">六.上传到github</span></a></li></ol>
     </div>
   </div>
 
 
     <div class="post-content">
       
-        <h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+        <h3 id="一-安装Git-Bash"><a href="#一-安装Git-Bash" class="headerlink" title="一.安装Git Bash"></a>一.安装Git Bash</h3><ul>
+<li><p><a href="https://git-for-windows.github.io/" target="_blank" rel="external">下载地址</a></p>
+</li>
+<li><p>安装步骤：双击下载后的exe文件，默认设置就行，安装路径可以按自己的需求更改</p>
+</li>
+<li><p>安装完后，桌面会有相应的快捷方式</p>
 <a id="more"></a>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+</li>
+</ul>
+<h3 id="二-安装NodeJs"><a href="#二-安装NodeJs" class="headerlink" title="二.安装NodeJs"></a>二.安装NodeJs</h3><pre><code>Hexo是基于nodeJs环境的静态博客
+</code></pre><ul>
+<li><p><a href="https://nodejs.org/en/" target="_blank" rel="external">下载地址</a>(说明：LTS为长期支持版，Current为当前最新版)</p>
+</li>
+<li><p>安装步骤：双击下好的msi文件，直接默认设置就可以，安装路径可以按自己的需求更改</p>
+</li>
+<li><p>在gitBash中输入<code>node -v</code>，查看版本，如果有结果显示，则nodeJs安装成功</p>
+<p>​        <img src="/images/0001/node.png" alt="1"></p>
+</li>
+</ul>
+<h3 id="三-安装Hexo"><a href="#三-安装Hexo" class="headerlink" title="三.安装Hexo"></a>三.安装Hexo</h3><ul>
+<li><p>先创建一个文件夹（用来存放所有blog的东西），然后cd到该文件夹下</p>
+</li>
+<li><p>安装hexo命令：<code>npm i -g hexo</code></p>
+</li>
+<li><p>安装完成后，查看版本</p>
+<p> <img src="/images/0001/hexo.png" alt="2"></p>
+</li>
+<li><p>初始化命令 <code>hexo  init</code>,初始化完成之后打开所在文件夹可以看到以下文件</p>
+<p><img src="/images/0001/hexo-init.png" alt="3"></p>
+</li>
+<li><p>解释一下：</p>
+<ul>
+<li>node_modules: 是依赖包</li>
+<li>public: 存放的是生成的页面</li>
+<li>scaffolds: 命令生成创建的各种文章</li>
+<li>themes: 主题</li>
+<li>_config.yml: 整个博客的配置</li>
+<li>db.jsom: source解析所得到的</li>
+<li>package.json: 项目所需模块项目的配置信息</li>
+</ul>
+</li>
+</ul>
+<h3 id="四-创建gitHub仓库"><a href="#四-创建gitHub仓库" class="headerlink" title="四.创建gitHub仓库"></a>四.创建gitHub仓库</h3><ul>
+<li>创建一个新的仓库，名称为 <code>yourname.github.io</code>, 其中yourname是你的github名称，按照这个规则创建才有用，然后默认配置就可以了</li>
+</ul>
+<h3 id="五-Hexo中github的配置"><a href="#五-Hexo中github的配置" class="headerlink" title="五.Hexo中github的配置"></a>五.Hexo中github的配置</h3><ul>
+<li><p>修改安装文件夹下的<code>_config.yml</code>文件的一些配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">	tyep: git</div><div class="line"> 	repo: https://github.com/YourgithubName/YourgithubName.github.io.git	</div><div class="line"> 	branch: master</div></pre></td></tr></table></figure>
+</li>
+<li><p>打开gitbash，进入你的blog目录，分别执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo genetate</div><div class="line">hexo server</div></pre></td></tr></table></figure>
+</li>
+<li><p>打开浏览器输入：<code>http://localhost:4000</code></p>
+</li>
+<li><p>你就看见了hexo的页面了</p>
+</li>
+</ul>
+<h3 id="六-上传到github"><a href="#六-上传到github" class="headerlink" title="六.上传到github"></a>六.上传到github</h3><ul>
+<li><p>先安装个：<code>npm install hexo-deployer-git --save</code>（这样才能将你写好的文章部署到github服务器上并让别人浏览到）</p>
+</li>
+<li><p>执行命令（建议每都按如下步骤部署）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+<p>在deploy过程中，要输入你的github的用户名和密码</p>
+</li>
+<li><p>在浏览器中输入<code>http://yougithubname.github.io</code>，就可以看到你的博客页面了</p>
+</li>
+</ul>
 
       
     </div>
@@ -262,12 +325,12 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2017/08/15/0000/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">Centos6.5下guacamole 0.9.8配置数据库，实现管理多台电脑</span>
-        <span class="prev-text nav-mobile">上一篇</span>
-      </a>
     
+      <a class="next" href="/2017/08/15/0000/">
+        <span class="next-text nav-default">Centos6.5下guacamole 0.9.8配置数据库，实现管理多台电脑</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 

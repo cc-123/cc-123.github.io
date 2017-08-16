@@ -22,7 +22,6 @@
 
 
 
-  <meta name="keywords" content="guacamole, CC" />
 
 
 
@@ -32,8 +31,7 @@
 
 
 
-
-  <link rel="alternate" href="/default" title="CC">
+  <link rel="alternate" href="/atom.xml" title="CC">
 
 
 
@@ -105,7 +103,16 @@
         <li class="mobile-menu-item">
           
           
-            归档
+            历史博客
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
           
         </li>
       </a>
@@ -144,7 +151,16 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              归档
+              历史博客
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
             
           </a>
         </li>
@@ -182,6 +198,12 @@
           2017-08-15
         </span>
         
+          <div class="post-category">
+            
+              <a href="/categories/guacamole/">guacamole</a>
+            
+          </div>
+        
       </div>
     </header>
 
@@ -214,7 +236,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># cd guacamole/sqlauth/guacamole-auth-jdbc-0.9.8/mysql/schema/</div><div class="line"># cat ./*.sql | mysql -u root -p guacamole_db</div><div class="line">Enter password: password</div></pre></td></tr></table></figure>
 <h3 id="三-在guacamole-properties中配置数据库的信息，添加下面的内容"><a href="#三-在guacamole-properties中配置数据库的信息，添加下面的内容" class="headerlink" title="三.在guacamole.properties中配置数据库的信息，添加下面的内容"></a>三.在guacamole.properties中配置数据库的信息，添加下面的内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># MySQL properties</div><div class="line">mysql-hostname: localhost</div><div class="line">mysql-port: 3306</div><div class="line">mysql-database: guacamole_db</div><div class="line">mysql-username: guacamole_user</div><div class="line">mysql-password: some_password</div></pre></td></tr></table></figure>
 <h3 id="四-成功后guacamole的账号和密码默认都是guacadmin"><a href="#四-成功后guacamole的账号和密码默认都是guacadmin" class="headerlink" title="四.成功后guacamole的账号和密码默认都是guacadmin"></a>四.成功后guacamole的账号和密码默认都是guacadmin</h3><p>成功后截图，可在SETTINGS里添加新的电脑<br><img src="http://img.blog.csdn.net/20170807170055051?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2NjXzEyMzQ1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<h5 id="参考文档："><a href="#参考文档：" class="headerlink" title="参考文档："></a>参考文档：</h5><p><a href="https://deviantengineer.com/2015/02/guacamole-centos7/" target="_blank" rel="external">https://deviantengineer.com/2015/02/guacamole-centos7/</a><br>  <a href="http://guacamole.incubator.apache.org/doc/gug/jdbc-auth.html" target="_blank" rel="external">http://guacamole.incubator.apache.org/doc/gug/jdbc-auth.html</a></p>
+<h5 id="参考文档："><a href="#参考文档：" class="headerlink" title="参考文档："></a>参考文档：</h5><p>  <a href="https://deviantengineer.com/2015/02/guacamole-centos7/" target="_blank" rel="external">https://deviantengineer.com/2015/02/guacamole-centos7/</a><br>  <a href="http://guacamole.incubator.apache.org/doc/gug/jdbc-auth.html" target="_blank" rel="external">http://guacamole.incubator.apache.org/doc/gug/jdbc-auth.html</a></p>
 
       
     </div>
@@ -250,15 +272,15 @@
     
       <footer class="post-footer">
         
-          <div class="post-tags">
-            
-              <a href="/tags/guacamole/">guacamole</a>
-            
-          </div>
-        
         
         
   <nav class="post-nav">
+    
+      <a class="prev" href="/2017/08/16/0001/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">hexo + github 搭建个人博客</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
     
     
       <a class="next" href="/2017/08/15/hello-world/">
@@ -290,6 +312,10 @@
   <div class="social-links">
     
       
+        
+          <a href="mailto:1716828044@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
     
       
     
@@ -317,9 +343,6 @@
     
     
     
-      
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
   </div>
 
 
@@ -336,6 +359,8 @@
   <span class="copyright-year">
     
     &copy; 
+     
+      2015 - 
     
     2017
 
