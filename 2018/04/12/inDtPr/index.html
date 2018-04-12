@@ -17,6 +17,8 @@
 
 
 
+  <meta name="description" content="面试-数据库"/>
+
 
 
 
@@ -38,7 +40,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/page/2/"/>
+<link rel="canonical" href="http://yoursite.com/2018/04/12/inDtPr/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.5.0" />
@@ -71,7 +73,7 @@
 
 
 
-    <title> CC </title>
+    <title> 面试-数据库 - CC </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -182,132 +184,102 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  <section id="posts" class="posts">
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/08/16/0001/">hexo + github 搭建个人博客</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-08-16
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/hexo/">hexo</a>
-            
-          </div>
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h3 id="一-安装Git-Bash"><a href="#一-安装Git-Bash" class="headerlink" title="一.安装Git Bash"></a>一.安装Git Bash</h3><ul>
-<li><p><a href="https://git-for-windows.github.io/" target="_blank" rel="external">下载地址</a></p>
-</li>
-<li><p>安装步骤：双击下载后的exe文件，默认设置就行，安装路径可以按自己的需求更改</p>
-</li>
-<li><p>安装完后，桌面会有相应的快捷方式</p>
-          <div class="read-more">
-            <a href="/2017/08/16/0001/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/08/15/0000/">Centos6.5下guacamole 0.9.8配置数据库，实现管理多台电脑</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-08-15
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/guacamole/">guacamole</a>
-            
-          </div>
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><ol>
-<li>已完成guacamole 0.9.8的基本安装</li>
-<li>已安装好mysql</li>
-</ol>
-<h3 id="一-下载数据库连接拓展"><a href="#一-下载数据库连接拓展" class="headerlink" title="一.下载数据库连接拓展"></a>一.下载数据库连接拓展</h3><p>1.在GUACAMOLE_HOME下创建文件夹sqlauth，下载guacamole-auth-jdbc-mysql-0.9.8.tar.gz和mysql-connector-java-5.1.38.tar.gz</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># mkdir sqlauth</div><div class="line"># cd sqlauth</div><div class="line"># wget http://dev.mysql.com/get/Downloads/Connector/j/mysql- connector-java-5.1.38.tar.gz </div><div class="line"># wget https://sourceforge.net/projects/guacamole/files/current/extensions/guacamole-auth-jdbc-0.9.8.tar.gz/</div></pre></td></tr></table></figure>
-          <div class="read-more">
-            <a href="/2017/08/15/0000/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-  </section>
-
   
-  <nav class="pagination">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          面试-数据库
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-04-12
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/面试/">面试</a>
+            
+          </div>
+        
+      </div>
+    </header>
+
     
-      <a class="prev" href="/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text">上一页</span>
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-数据库语言"><span class="toc-text">一. 数据库语言</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h3 id="一-数据库语言"><a href="#一-数据库语言" class="headerlink" title="一. 数据库语言"></a>一. 数据库语言</h3><p>DML（data manipulation language）是数据操纵语言：它们是SELECT、UPDATE、INSERT、DELETE，就象它的名字一样，这4条命令是用来对数据库里的数据进行操作的语言。<br>DDL（data definition language）是数据定义语言：DDL比DML要多，主要的命令有CREATE、ALTER、DROP等，DDL主要是用在定义或改变表（TABLE）的结构，数据类型，表之间的链接和约束等初始化工作上，他们大多在建立表时使用。<br>DCL（DataControlLanguage）是数据库控制语言：是用来设置或更改数据库用户或角色权限的语句，包括（grant,deny,revoke等）语句。</p>
+<a id="more"></a>
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/wechat.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2018/04/12/inOsPr/">
+        <span class="next-text nav-default">面试-操作系统</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
       </a>
-    
     
   </nav>
 
+      </footer>
+    
+
+  </article>
+
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>  
       </main>
@@ -383,6 +355,8 @@
     </div>
 
     
+  
+
 
 
     
