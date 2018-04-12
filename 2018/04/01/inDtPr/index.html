@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="Hexo + Blog 用法小结"/>
+  <meta name="description" content="面试-数据库"/>
 
 
 
@@ -40,7 +40,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/2018/04/12/useHexoBlog/"/>
+<link rel="canonical" href="http://yoursite.com/2018/04/01/inDtPr/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.5.0" />
@@ -73,7 +73,7 @@
 
 
 
-    <title> Hexo + Blog 用法小结 - CC </title>
+    <title> 面试-数据库 - CC </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -189,18 +189,18 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          Hexo + Blog 用法小结
+          面试-数据库
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2018-04-12
+          2018-04-01
         </span>
         
           <div class="post-category">
             
-              <a href="/categories/hexo/">hexo</a>
+              <a href="/categories/面试/">面试</a>
             
           </div>
         
@@ -212,29 +212,15 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-创建新博客"><span class="toc-text">一.创建新博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-在博客中插入图片"><span class="toc-text">二.在博客中插入图片</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-本地引用"><span class="toc-text">1.本地引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-CDN引用"><span class="toc-text">2. CDN引用</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-数据库语言"><span class="toc-text">一. 数据库语言</span></a></li></ol>
     </div>
   </div>
 
 
     <div class="post-content">
       
-        <h3 id="一-创建新博客"><a href="#一-创建新博客" class="headerlink" title="一.创建新博客"></a>一.创建新博客</h3><p>​    <strong>语法:</strong></p>
-<p>使用 <code>hexo new [layout] &lt;title&gt;</code> 命令来生成一篇文章，如果 <code>layout</code> 没有指明的话，hexo会使用_config.yml中 <code>default_layout</code> 的默认配置（通常情况下就是post）。如果 <code>title</code>包含空格的话，需要用引号括起来。</p>
+        <h3 id="一-数据库语言"><a href="#一-数据库语言" class="headerlink" title="一. 数据库语言"></a>一. 数据库语言</h3><p>DML（data manipulation language）是数据操纵语言：它们是SELECT、UPDATE、INSERT、DELETE，就象它的名字一样，这4条命令是用来对数据库里的数据进行操作的语言。<br>DDL（data definition language）是数据定义语言：DDL比DML要多，主要的命令有CREATE、ALTER、DROP等，DDL主要是用在定义或改变表（TABLE）的结构，数据类型，表之间的链接和约束等初始化工作上，他们大多在建立表时使用。<br>DCL（DataControlLanguage）是数据库控制语言：是用来设置或更改数据库用户或角色权限的语句，包括（grant,deny,revoke等）语句。</p>
 <a id="more"></a>
-<p><strong>代码:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new [layout]  &lt;title&gt;</div></pre></td></tr></table></figure>
-<p><strong>小述:</strong></p>
-<ol>
-<li>layout    layout是博客布局，hexo博客安装成功后，在默认的根部录下，有一个scaffolds文件夹，里面有个3个文件，分别是draft.md  /  page.md  /  post.md。这3个文件就是默认的 layout </li>
-<li>如果不提供layout的话，也可以生成博客，不过默认的layout是在 _config.yml 中的配置。一般情况下，如果没有更改过任何 _config.yml 中的内容的话，默认的 layout 是 post</li>
-<li>如果 <code>title</code> 包含空格的话， <code>title</code> 需要用引号包裹起来。也就是意味着，如果 <code>title</code> 没有空格的话，可以不使用引号。</li>
-</ol>
-<h3 id="二-在博客中插入图片"><a href="#二-在博客中插入图片" class="headerlink" title="二.在博客中插入图片"></a>二.在博客中插入图片</h3><p>在写文章时，常常有配图说明的需求。Hexo有多种图片插入方式，可以将图片存放在本地引用或者将图片放在CDN上引用。</p>
-<h4 id="1-本地引用"><a href="#1-本地引用" class="headerlink" title="1.本地引用"></a>1.本地引用</h4><p>当Hexo项目中只用到少量图片时，可以将图片统一放在<code>source/images</code>文件夹中，通过markdown语法访问它们。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![](/images/image.jpg)</div></pre></td></tr></table></figure>
-<h4 id="2-CDN引用"><a href="#2-CDN引用" class="headerlink" title="2. CDN引用"></a>2. CDN引用</h4><p>除了在本地存储图片，还可以将图片上传到一些免费的CDN服务中。在CDN上传图片后，会生成对应的url地址，将地址直接拿来引用即可。</p>
-
       
     </div>
 
@@ -280,7 +266,7 @@
       </a>
     
     
-      <a class="next" href="/2018/04/12/sortFeature/">
+      <a class="next" href="/2017/10/12/sortFeature/">
         <span class="next-text nav-default">sortFeature</span>
         <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
