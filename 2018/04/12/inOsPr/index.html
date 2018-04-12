@@ -22,8 +22,6 @@
 
 
 
-  <meta name="keywords" content="test, CC" />
-
 
 
 
@@ -200,6 +198,12 @@
           2018-04-12
         </span>
         
+          <div class="post-category">
+            
+              <a href="/categories/面试/">面试</a>
+            
+          </div>
+        
       </div>
     </header>
 
@@ -217,6 +221,7 @@
       
         <h3 id="一-各文件系统的区别"><a href="#一-各文件系统的区别" class="headerlink" title="一. 各文件系统的区别"></a>一. 各文件系统的区别</h3><p><strong>NTFS</strong>(New Technology File System)是Windows NT以及之后的Windows 2000、Windows XP、Windows Server 2003、Windows Server 2008、Windows Vista和Windows 7的标准文件系统。 </p>
 <p><strong>NTFS是一个日志文件系统</strong>，使用 NTFS 日志（$Logfile）记录卷更改元数据。 这是NTFS一个非常关键的功能（FAT/FAT32 不提供此项功能），用于确保其内部的复杂数据结构（比较重要的如卷分配图、磁盘碎片整理 API 进行的数据转移操作、MFT（主文件表）记录的更改情况（如移动 MFT 记录中存储的变长属性和属性表））和索引（用于目录和安全描述符）即使在系统发生崩溃后仍然能保持一致，并且在卷被重新加载后能够方便地对这些关键数据结构的失败提交进行回滚。 </p>
+<a id="more"></a>
 <p><strong>卷影复制（VSC）服务</strong>通过将新改写的数据复制到卷影（写入时复制）来保存 NTFS 卷上的文件和文件夹的历史版本。当用户请求恢复旧早期版本时，旧的文件数据将会覆盖新的文件数据。该功能也使得数据备份程序可以存档当前系统正在使用的文件。对于负载较重的系统，Microsoft 建议将卷影副本设置到单独的磁盘上，以减小系统主要卷的 I/O 负载。 </p>
 <p><strong>NTFS取代了文件分配表（FAT）文件系统</strong>，为Microsoft的Windows系列操作系统提供文件系统。NTFS对FAT和HPFS（高性能文件系统）作了若干改进，例如，支持元数据，并且使用了高级数据结构，以便于改善性能、可靠性和磁盘空间利用率，并提供了若干附加扩展功能，如访问控制列表（ACL）和文件系统日志。</p>
 
@@ -253,12 +258,6 @@
 
     
       <footer class="post-footer">
-        
-          <div class="post-tags">
-            
-              <a href="/tags/test/">test</a>
-            
-          </div>
         
         
         
