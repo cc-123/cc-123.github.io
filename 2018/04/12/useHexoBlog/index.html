@@ -22,8 +22,6 @@
 
 
 
-  <meta name="keywords" content="hexo, CC" />
-
 
 
 
@@ -200,6 +198,12 @@
           2018-04-12
         </span>
         
+          <div class="post-category">
+            
+              <a href="/categories/hexo/">hexo</a>
+            
+          </div>
+        
       </div>
     </header>
 
@@ -208,7 +212,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-创建新博客"><span class="toc-text">一.创建新博客</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-创建新博客"><span class="toc-text">一.创建新博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-在博客中插入图片"><span class="toc-text">二.在博客中插入图片</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-本地引用"><span class="toc-text">1.本地引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-CDN引用"><span class="toc-text">2. CDN引用</span></a></li></ol></li></ol>
     </div>
   </div>
 
@@ -226,6 +230,10 @@
 <li>如果不提供layout的话，也可以生成博客，不过默认的layout是在 _config.yml 中的配置。一般情况下，如果没有更改过任何 _config.yml 中的内容的话，默认的 layout 是 post</li>
 <li>如果 <code>title</code> 包含空格的话， <code>title</code> 需要用引号包裹起来。也就是意味着，如果 <code>title</code> 没有空格的话，可以不使用引号。</li>
 </ol>
+<h3 id="二-在博客中插入图片"><a href="#二-在博客中插入图片" class="headerlink" title="二.在博客中插入图片"></a>二.在博客中插入图片</h3><p>在写文章时，常常有配图说明的需求。Hexo有多种图片插入方式，可以将图片存放在本地引用或者将图片放在CDN上引用。</p>
+<h4 id="1-本地引用"><a href="#1-本地引用" class="headerlink" title="1.本地引用"></a>1.本地引用</h4><p>当Hexo项目中只用到少量图片时，可以将图片统一放在<code>source/images</code>文件夹中，通过markdown语法访问它们。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![](/images/image.jpg)</div></pre></td></tr></table></figure>
+<h4 id="2-CDN引用"><a href="#2-CDN引用" class="headerlink" title="2. CDN引用"></a>2. CDN引用</h4><p>除了在本地存储图片，还可以将图片上传到一些免费的CDN服务中。在CDN上传图片后，会生成对应的url地址，将地址直接拿来引用即可。</p>
 
       
     </div>
@@ -260,12 +268,6 @@
 
     
       <footer class="post-footer">
-        
-          <div class="post-tags">
-            
-              <a href="/tags/hexo/">hexo</a>
-            
-          </div>
         
         
         
