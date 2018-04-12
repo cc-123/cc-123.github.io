@@ -17,8 +17,12 @@
 
 
 
+  <meta name="description" content="面试-操作系统"/>
 
 
+
+
+  <meta name="keywords" content="test, CC" />
 
 
 
@@ -38,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/archives/2018/04/"/>
+<link rel="canonical" href="http://yoursite.com/2018/04/12/inOsPr/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.5.0" />
@@ -71,11 +75,7 @@
 
 
 
-    <title>
-  
-    归档 - CC
-  
-</title>
+    <title> 面试-操作系统 - CC </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -187,95 +187,104 @@
           <div id="content" class="content">
             
   
-  <section id="archive" class="archive">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          面试-操作系统
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-04-12
+        </span>
+        
+      </div>
+    </header>
+
     
-      
-        <div class="archive-title">
-          <span class="archive-post-counter">
-            目前共计 7 篇日志
-          </span>
-        </div>
-      
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-各文件系统的区别"><span class="toc-text">一. 各文件系统的区别</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h3 id="一-各文件系统的区别"><a href="#一-各文件系统的区别" class="headerlink" title="一. 各文件系统的区别"></a>一. 各文件系统的区别</h3><p><strong>NTFS</strong>(New Technology File System)是Windows NT以及之后的Windows 2000、Windows XP、Windows Server 2003、Windows Server 2008、Windows Vista和Windows 7的标准文件系统。 </p>
+<p><strong>NTFS是一个日志文件系统</strong>，使用 NTFS 日志（$Logfile）记录卷更改元数据。 这是NTFS一个非常关键的功能（FAT/FAT32 不提供此项功能），用于确保其内部的复杂数据结构（比较重要的如卷分配图、磁盘碎片整理 API 进行的数据转移操作、MFT（主文件表）记录的更改情况（如移动 MFT 记录中存储的变长属性和属性表））和索引（用于目录和安全描述符）即使在系统发生崩溃后仍然能保持一致，并且在卷被重新加载后能够方便地对这些关键数据结构的失败提交进行回滚。 </p>
+<p><strong>卷影复制（VSC）服务</strong>通过将新改写的数据复制到卷影（写入时复制）来保存 NTFS 卷上的文件和文件夹的历史版本。当用户请求恢复旧早期版本时，旧的文件数据将会覆盖新的文件数据。该功能也使得数据备份程序可以存档当前系统正在使用的文件。对于负载较重的系统，Microsoft 建议将卷影副本设置到单独的磁盘上，以减小系统主要卷的 I/O 负载。 </p>
+<p><strong>NTFS取代了文件分配表（FAT）文件系统</strong>，为Microsoft的Windows系列操作系统提供文件系统。NTFS对FAT和HPFS（高性能文件系统）作了若干改进，例如，支持元数据，并且使用了高级数据结构，以便于改善性能、可靠性和磁盘空间利用率，并提供了若干附加扩展功能，如访问控制列表（ACL）和文件系统日志。</p>
+
+      
+    </div>
 
     
       
-        
-        
+      
 
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/wechat.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
         
-          
-          <div class="collection-title">
-            <h2 class="archive-year">2018</h2>
+          <div class="post-tags">
+            
+              <a href="/tags/test/">test</a>
+            
           </div>
         
-      
-      
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            04-12
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/04/12/inOsPr/" class="archive-post-link">
-            面试-操作系统
-          </a>
-        </span>
-      </div>
+        
+        
+  <nav class="post-nav">
     
-      
-        
-        
-
-        
-      
-      
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            04-12
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/04/12/useHexoBlog/" class="archive-post-link">
-            Hexo + Blog 用法小结
-          </a>
-        </span>
-      </div>
     
-      
-        
-        
-
-        
-      
-      
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            04-12
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/04/12/sortFeature/" class="archive-post-link">
-            sortFeature
-          </a>
-        </span>
-      </div>
-    
-  </section>
-
-  
-  <nav class="pagination">
-    
+      <a class="next" href="/2018/04/12/useHexoBlog/">
+        <span class="next-text nav-default">Hexo + Blog 用法小结</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
+      </footer>
+    
+
+  </article>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>  
       </main>
@@ -351,6 +360,8 @@
     </div>
 
     
+  
+
 
 
     
