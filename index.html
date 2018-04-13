@@ -214,6 +214,8 @@
       
         
         
+          
+        
 
         
           <h3 id="一-CSS各尺寸单位"><a href="#一-CSS各尺寸单位" class="headerlink" title="一.CSS各尺寸单位"></a>一.CSS各尺寸单位</h3><h4 id="1-PX"><a href="#1-PX" class="headerlink" title="1. PX"></a>1. PX</h4><p>​    <strong>语义:</strong></p>
@@ -226,80 +228,9 @@
 <li>国外的大部分网站能够调整的原因在于其使用了em或rem作为字体单位；</li>
 <li>Firefox能够调整px和em，rem，但是96%以上的中国网民使用IE浏览器(或内核)。</li>
 </ul>
-<h4 id="2-EM"><a href="#2-EM" class="headerlink" title="2. EM"></a>2. EM</h4><p>​    <strong>语义:</strong></p>
-<p>em是相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。</p>
-<p>​    <strong>特点:</strong></p>
-<ul>
-<li>em的值并不是固定的；</li>
-<li>em会继承父级元素的字体大小。</li>
-</ul>
-<h4 id="3-REM"><a href="#3-REM" class="headerlink" title="3. REM"></a>3. REM</h4><p>​    <strong>语义:</strong></p>
-<p>rem是CSS3新增的一个相对单位（root em，根em）。这个单位与em有什么区别呢？区别在于使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。</p>
-<p>目前，除了IE8及更早版本外，所有浏览器均已支持rem。对于不支持它的浏览器，应对方法也很简单，就是多写一个绝对单位的声明。这些浏览器会忽略用rem设定的字体大小。代码如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">div &#123;font-size:14px; font-size:.80rem;&#125;</div></pre></td></tr></table></figure>
-<h3 id="二-选择器的优先级"><a href="#二-选择器的优先级" class="headerlink" title="二. 选择器的优先级"></a>二. 选择器的优先级</h3><p>一般来说，选择器的优先级（从上往下依次降低）是：</p>
-<ol>
-<li>在属性后面使用 !important 会覆盖页面内任何位置定义的元素样式。</li>
-<li>作为style属性写在元素内的样式</li>
-<li>id选择器</li>
-<li>类选择器,  伪类选择器</li>
-<li>标签选择器</li>
-<li>通配符选择器</li>
-</ol>
-<p><strong>注意:</strong></p>
-<p>​    类选择器和伪类选择器的优先级一样,  谁在后面谁起作用，后面的样式会覆盖前面的样式</p>
-<h3 id="三-各样式百分比相对于谁"><a href="#三-各样式百分比相对于谁" class="headerlink" title="三.各样式百分比相对于谁"></a>三.各样式百分比相对于谁</h3><ol>
-<li><p>相对于父元素宽度的:    [max/min-]width、left、right、text-indent、padding、margin 等;</p>
-</li>
-<li><p>相对于父元素高度的:     [max/min-]height、top、bottom 等;</p>
-</li>
-<li><p>相对于主轴长度的:         flex-basis 等;</p>
-</li>
-<li><p>相对于继承字号的:         font-size 等;</p>
-</li>
-<li><p>相对于自身字号的:         line-height 等;</p>
-</li>
-<li><p>相对于自身宽高的:         </p>
-<p>border-radius、background-size、border-image-width、transform: translate()、transform-origin、zoom、clip-path 等;</p>
-</li>
-<li><p>相对于行高的:                 vertical-align 等;</p>
-</li>
-</ol>
-<h3 id="四-CSS3新增属性"><a href="#四-CSS3新增属性" class="headerlink" title="四. CSS3新增属性"></a>四. CSS3新增属性</h3><ol>
-<li>box-shadow（阴影效果）</li>
-<li>border-color（为边框设置多种颜色）</li>
-<li>border-image（图片边框）</li>
-<li>text-shadow（文本阴影）</li>
-<li>text-overflow（文本截断）</li>
-<li><p>word-wrap（自动换行）</p>
-</li>
-<li><p>border-radius（圆角边框）</p>
-</li>
-<li>opacity（透明度）</li>
-</ol>
-<ol>
-<li>box-sizing（控制盒模型的组成模式）</li>
-</ol>
-<ol>
-<li>resize（元素缩放）</li>
-</ol>
-<ol>
-<li>outline（外边框）</li>
-</ol>
-<ol>
-<li>background-size（指定背景图片尺寸）</li>
-</ol>
-<ol>
-<li>background-origin（指定背景图片从哪里开始显示）</li>
-<li>background-clip（指定背景图片从什么位置开始裁剪）</li>
-</ol>
-<ol>
-<li>background（为一个元素指定多个背景）</li>
-<li>hsl（通过色调、饱和度、亮度来指定颜色颜色值）</li>
-<li>hsla（在hsl的基础上增加透明度设置）</li>
-<li>rgba（基于rgb设置颜色，a设置透明度）</li>
-</ol>
-
+          <div class="read-more">
+            <a href="/2018/04/13/inCssPr/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
